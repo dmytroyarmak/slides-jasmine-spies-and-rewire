@@ -14,6 +14,8 @@ import {
   Text
 } from "spectacle";
 
+import CodeSlide from "spectacle-code-slide";
+
 // Import image preloader util
 import preloader from "spectacle/lib/utils/preloader";
 
@@ -50,36 +52,35 @@ export default class Presentation extends React.Component {
       <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
         <Slide transition={["zoom"]} bgColor="primary">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-            Spectacle Boilerplate
+            Jasmine Spies And Rewire
           </Heading>
           <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
-            open the presentation/index.js file to get started
+            How to mock functions in ES Modules?
           </Text>
         </Slide>
-        <Slide transition={["fade"]} bgColor="tertiary">
-          <Heading size={6} textColor="primary" caps>Typography</Heading>
-          <Heading size={1} textColor="secondary">Heading 1</Heading>
-          <Heading size={2} textColor="secondary">Heading 2</Heading>
-          <Heading size={3} textColor="secondary">Heading 3</Heading>
-          <Heading size={4} textColor="secondary">Heading 4</Heading>
-          <Heading size={5} textColor="secondary">Heading 5</Heading>
-          <Text size={6} textColor="secondary">Standard text</Text>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>Standard List</Heading>
-          <List>
-            <ListItem>Item 1</ListItem>
-            <ListItem>Item 2</ListItem>
-            <ListItem>Item 3</ListItem>
-            <ListItem>Item 4</ListItem>
-          </List>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-          <BlockQuote>
-            <Quote>Example Quote</Quote>
-            <Cite>Author</Cite>
-          </BlockQuote>
-        </Slide>
+        <CodeSlide
+          textSize="0.8em"
+          lang="js"
+          code={require("!raw-loader!../assets/code-examples/accounts-service")}
+          ranges={[
+            { title: "accounts-service.js" },
+            { loc: [0, 1] },
+
+            { loc: [2, 3] },
+            { loc: [3, 6] },
+            { loc: [2, 7] },
+
+            { loc: [8, 9] },
+            { loc: [9, 12] },
+            { loc: [8, 13] },
+
+            { loc: [14, 15] },
+            { loc: [15, 16] },
+            { loc: [16, 19] },
+            { loc: [14, 20] },
+            { loc: [14, 20], title: "How to unit test it?" }
+          ]}
+        />
       </Deck>
     );
   }
