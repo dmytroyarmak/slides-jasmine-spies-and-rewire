@@ -133,13 +133,13 @@ function defer() {
   var _resolve, _reject;
 
   var _promise = new Promise((resolve, reject) => {
-  _resolve = resolve;
-  _reject = reject;
+    _resolve = resolve;
+    _reject = reject;
   });
 
   return {
-  resolve: _resolve,
-  reject: _reject,
-  promise: _promise
+    resolve: _resolve,
+    reject: _reject,
+    promise: _promise
   };
 }

@@ -32,7 +32,8 @@ const images = {
   jasmine1: require("../assets/jasmine-1.jpg"),
   jasmine2: require("../assets/jasmine-2.jpg"),
   jasmine3: require("../assets/jasmine-3.jpg"),
-  jasmine4: require("../assets/jasmine-4.jpg")
+  jasmine4: require("../assets/jasmine-4.jpg"),
+  promise: require("../assets/promise.jpg")
 };
 
 preloader(images);
@@ -75,6 +76,9 @@ export default class Presentation extends React.Component {
           <Heading>Rewire</Heading>
           <Image src={images.jasmine4} />
         </Slide>
+        <Slide transition={["fade"]}>
+          <Image src={images.promise} />
+        </Slide>
         <CodeSlide
           textSize="0.8em"
           lang="js"
@@ -100,6 +104,7 @@ export default class Presentation extends React.Component {
             { loc: [15, 16] },
             { loc: [16, 19] },
             { loc: [14, 20] },
+            { loc: [0, 20] },
             { loc: [14, 20], title: "How to unit test it?" }
           ]}
         />
@@ -109,9 +114,9 @@ export default class Presentation extends React.Component {
           code={require("!raw-loader!../assets/code-examples/accounts-service.spec")}
           ranges={[
             { loc: [0, 0], title: "accounts-service.spec.js" },
+            { loc: [130, 131] },
+            { loc: [131, 132] },
             { loc: [130, 145] },
-
-            { loc: [0, 4] },
 
             { loc: [5, 6], title: "Success flow" },
             { loc: [41, 42] },
@@ -121,6 +126,7 @@ export default class Presentation extends React.Component {
             { loc: [75, 76] },
             { loc: [76, 77] },
 
+            { loc: [0, 4] },
             { loc: [5, 6] },
             { loc: [6, 7] },
             { loc: [7, 9] },
@@ -229,6 +235,7 @@ export default class Presentation extends React.Component {
             { loc: [0, 0], title: "karma.conf.js" },
             { loc: [28, 31] },
             { loc: [33, 34] },
+            { loc: [38, 40] },
             { loc: [40, 46] }
           ]}
         />
